@@ -91,4 +91,15 @@ controller.update=async (req, res)=>{
     res.json({success: true, data: data, message: 'UPDATE OK'});
 };
 
+controller.delete=async (req, res)=>{
+    const {id} = req.body;
+
+    const dataDelete = await Employee.destroy({
+        //where: {id: id}
+        where: {id}
+    });
+
+    res.json({success: true, deleted: dataDelete, message: 'DELETE OK'});
+};
+
 module.exports=controller;

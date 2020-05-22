@@ -10,4 +10,6 @@ router.post('/create', controller.create);
 router.get('/get/:id', controller.get);
 router.post('/update/:id', controller.update);
 
+router.post('/delete', controller.delete);
+
 module.exports=router;
